@@ -7,6 +7,7 @@ public class kuis13Ezar {
         int n = sc.nextInt();
         int totalBerat = 0;
         int totalBiaya = 0;
+        int biayaTertinggi = 0;
 
         for (int i = 1; i <= n; i++) {
             System.out.print("Berat cucian pelanggan ke-" + i + " (kg): ");
@@ -19,6 +20,14 @@ public class kuis13Ezar {
             } else {
                 biaya = 15000 + (berat - 3) * 4000;
             }
+
+            if (berat < 1 || berat > 20) {
+                System.out.print("input tidak valid, ulangi");
+            }
+
+            if (biaya > biayaTertinggi) {
+                biayaTertinggi = biaya;
+            }
             totalBiaya = 0;
             totalBiaya += biaya;
             totalBerat += berat;
@@ -29,5 +38,7 @@ public class kuis13Ezar {
         System.out.println("=== REKAP HARIAN ===");
         System.out.println("Total pemasukan : Rp " + totalBiaya);
         System.out.println("Rata-rata berat : " + rataBerat + " kg");
+        System.out.println("biaya tertinggi : " + biayaTertinggi );
+        System.out.println("yang terkena tarif tambahan : ");
     }
 }
